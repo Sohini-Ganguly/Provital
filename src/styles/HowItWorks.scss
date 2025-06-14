@@ -1,0 +1,140 @@
+.how-it-works-section {
+  background: linear-gradient(to bottom, #f9fafc, #ffffff);
+  padding: 80px;
+
+  .section-label {
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.075em;
+    color: #707070;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 133%;
+    margin-bottom: 32px;
+
+    .highlight {
+      font-style: italic;
+      font-weight: 600;
+      color: #e26d5a;
+    }
+  }
+
+  .tabs-and-arrows {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 32px;
+
+    .pillars-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      .tab {
+        font-family: Inter, sans-serif;
+        font-size: 14px;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: #f0f0f0;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          background: #000;
+          color: #fff;
+        }
+
+        &:hover {
+          background: #dcdcdc;
+        }
+      }
+    }
+
+    .tab-arrows {
+      display: flex;
+      gap: 0.5rem;
+
+      .scroll-arrow {
+        background: #ffffff;
+        border: none;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: #f0f0f0;
+        }
+
+        &.small {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .pillar-card-belt {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pillar-card-wrapper {
+      flex: 0 0 auto;
+      transition: transform 0.3s ease;
+
+      &.active {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  // 🔽 Mobile-specific adjustments
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+
+    .tabs-and-arrows {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .tab-arrows {
+        display: none; // Hide arrows on mobile
+      }
+
+      .pillars-tabs {
+        overflow-x: auto;
+        width: 100%;
+      }
+    }
+
+    .pillar-card-belt {
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+
+      .pillar-card-wrapper {
+        scroll-snap-align: start;
+        min-width: 80%; // allow better auto-scroll visibility
+      }
+    }
+  }
+}

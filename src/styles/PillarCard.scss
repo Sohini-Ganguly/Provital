@@ -1,0 +1,75 @@
+.pillar-card {
+  background: #fff;
+  border-radius: 16px;
+  width: 493px;
+  min-width: 493px;
+  padding: 0;
+  box-shadow: 0px 3.39px 26.26px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &.active {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .image-wrapper {
+    width: 100%;
+    height: 260px; // adjust as needed
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .content {
+    padding: 1rem;
+
+    .stat-badge {
+      /* fluid width */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.87);
+      backdrop-filter: blur(15px);
+      /* remove fixed width, use padding for flexibility */
+      padding: 0 12px;
+      min-height: 42px;
+      border-radius: 21px; /* half of min-height for pill shape */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+      margin-bottom: 0.75rem;
+
+      .stat-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        flex-shrink: 0;
+      }
+
+      .stat-text {
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: #000;
+      }
+    }
+
+    h3 {
+      margin: 0.5rem 0;
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+  }
+}

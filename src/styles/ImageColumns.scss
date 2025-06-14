@@ -1,0 +1,103 @@
+.image-column-container {
+  position: absolute;
+  top: 92px; // Adjust this to match your navbar height
+  left: 0;
+  width: fit-content;
+  height: 708px;
+  overflow: hidden;
+  padding-left: 64px;
+  z-index: 1;
+}
+
+.image-columns {
+  display: flex;
+  gap: 24px;
+  height: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 247px;
+    height: 354px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    top: 1px;
+  }
+
+  .spacer {
+    height: 354px;
+    margin-bottom: 10px;
+    visibility: hidden;
+  }
+}
+
+.column1 {
+  animation: scrollDown 20s linear infinite;
+  margin-top: 177px;
+}
+
+.column2 {
+  animation: scrollUp 20s linear infinite;
+  margin-bottom: 177px;
+}
+
+@keyframes scrollDown {
+  0%   { transform: translateY(-1820px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes scrollUp {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-1820px); }
+}
+
+/* --- Mobile only horizontal scroll animation --- */
+@media screen and (max-width: 767px) {
+  .image-column-container {
+    overflow: hidden;
+    height: 120px; // adjust height as needed for mobile
+
+    .image-columns {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      animation: scroll-left 20s linear infinite;
+      width: max-content;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      img {
+        height: 100px;
+        width: auto;
+        margin-right: 12px;
+        flex-shrink: 0;
+        border-radius: 12px;
+      }
+
+      .spacer {
+        width: 16px;
+      }
+    }
+
+    .column2 {
+      animation-delay: 10s; // staggered start
+    }
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}

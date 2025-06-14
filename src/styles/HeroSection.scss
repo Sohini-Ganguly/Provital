@@ -1,0 +1,83 @@
+.hero-section {
+  // popxsition: relative;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  // padding-top: 80px; // Adjust only if needed based on navbar height
+  background: #fafafa;
+  overflow: hidden; // This prevents any visual overflow from blobs
+  z-index: 1;
+}
+
+.blur-blob {
+  position: absolute;
+  top:92px ;
+  right: 0;
+  width: 227px;
+  height: 222px;
+  background: rgba(207, 225, 240, 0.44);
+  filter: blur(150px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+
+
+.image-columns-wrapper {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  // padding-left: 2rem;
+}
+.search-wrapper {
+  position: absolute;
+  top: 65%; // tune this
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+  
+  
+}
+
+.text-block {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // padding: 0 2rem;
+  margin-top: -250px;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+
+    .highlight {
+      color: #00bcd4;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    color: #555;
+  }
+}
+
+.angled-separator {
+  width: 100%;
+  margin-top: 700px;
+  height: 100px;
+  background: linear-gradient(282.8deg, #f0c971 11.7%, #e5688c 63.17%);
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+  position: absolute;
+  z-index: 5;
+}
+
+
